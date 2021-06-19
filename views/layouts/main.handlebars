@@ -5,10 +5,26 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Just Tech News</title>
-        <link rel="stylesheet" href="/public/css/style.css">
+        <link rel="stylesheet" href="/css/style.css">
     </head>
     
     <body>
+        <header class="main-header">
+            <h2>
+                <a href="/">Just Tech News</a>
+            </h2>
+            <nav>
+                {{#if loggedIn}}
+                <a href="/dashboard">Create Blog Post</a>
+                <button id ="logout">Log Out</button>
+                {{else}}
+                <a href="/login">Log In</a>
+                {{/if}}
+            </nav>
+        </header>
         {{{ body }}}
+        <footer>
+            Created By Sharni
+        </footer>
     </body>
 </html>
