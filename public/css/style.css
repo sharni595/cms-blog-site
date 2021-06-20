@@ -71,3 +71,40 @@ button:hover{
 .form h4{
     text-decoration: underline;
 }
+
+.homepage{
+    padding: 100px 30px 30px 30px;
+}
+
+.post{
+    padding: 20px;
+    display: block;    
+}
+
+.title{
+    font-size: 25px;
+    color:#D8DCFF;
+    background-color: #AEADF0;
+    padding: 6px;
+}
+
+.dashboard{
+    padding: 85px 30px 30px 30px;
+}
+
+.dashboard label{
+    display: block;
+    font-size: 25px;
+    padding-top: 20px;
+}
+
+.dashboard textarea{
+    width: 500px;
+    height: 100px;
+}
+
+.dashboard input{
+    width: 250px;
+    height: 40px;
+    padding-top: 15px;
+}
