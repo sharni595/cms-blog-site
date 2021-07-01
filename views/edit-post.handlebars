@@ -1,0 +1,55 @@
+<section class="edit-post m-5">
+    <h2>
+        Edit Post
+    </h2>
+    <form class="edit-post-form form-group">
+        <div>
+            <div class="pt-3">
+                <label for="post-title" class="form-label">Title</label>
+                <input name="post-title" type="text" value="{{post.title}}" class="form-control"/>
+            </div>
+
+            <div class="py-3">
+                <label for="post-contents" class="form-label">Contents</label>
+                <input class="form-control" name="post-contents" type="text" value="{{post.contents}}">
+            </div>
+        </div>
+        <div>
+            By you on {{format_date post.created_at}}
+            <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+        </div>
+        <button type="submit" class="btn btn-light">Save post</button>
+        <button type="button" id="delete-btn" class="btn btn-danger">Delete post</button>
+    </form>
+
+    {{#if loggedIn}}
+    <form class="comment-form form-group mt-5">
+        <div>
+            <textarea name="comment-body" class="form-control"></textarea>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-light mt-2 mb-4">Add Comment</button>
+        </div>
+    </form>
+    {{/if}}
+
+    
+    <div>
+        <h4>Comments</h4>
+        {{#each post.comments}}
+         <section class="comment border mb-2 border-dark p-2">
+            <div class="text">
+            {{comment_text}}
+            </div>
+            <hr>
+            <div class="commenter">
+            {{user.username}}
+            </div>
+        </section>
+        {{/each}}
+    </div>
+
+    <script src="/javascript/edit-post.js"></script>
+    <script src="/javascript/delete-post.js"></script>
+    <script src="/javascript/comment.js"></script>
+</section>
