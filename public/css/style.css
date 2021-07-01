@@ -108,3 +108,19 @@ button:hover{
     height: 40px;
     padding-top: 15px;
 }
+
+.info{
+    padding: 20px 0;
+}
+
+.single-post{
+    padding: 85px 30px 30px 30px;
+}
+
+.comment-form{
+    
+}
+
+.blog-content{
+    padding: 20px 0;
+}

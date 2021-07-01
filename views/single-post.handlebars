@@ -1,0 +1,41 @@
+<section class="single-post">
+    <div>
+        <h1>{{post.title}}</h1>
+        <span class="blog-content mb-2">{{post.contents}}</span>
+        <hr>
+        <span>By {{post.user.username}} on {{format_date post.created_at}}</span>
+    </div>
+
+    {{#if loggedIn}}
+    <form class="comment-form form-group mt-5">
+        <div>
+            <textarea name="comment-body" class="form-control"></textarea>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-light mt-2 mb-4">add comment</button>
+        </div>
+    </form>
+    {{/if}}
+
+
+    
+    <div>
+        <h4>Comments</h4>
+        {{#each post.comments}}
+         <section class="comment border mb-2 border-dark p-2">
+            <div class="text">
+            {{comment_text}}
+            </div>
+            <hr>
+            <div class="commenter">
+            {{user.username}} on {{format_date created_at}}
+            </div>
+        </section>
+        {{/each}}
+    </div>
+   
+</div>
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}

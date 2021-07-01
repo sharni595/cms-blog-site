@@ -20,9 +20,11 @@
         <h2>Your posts</h2>
         {{#each posts as |post|}}
         <article class="post">
-            <div class="title">
-                <h4>{{title}}</h4>
-                <span>{{content}}</span>
+            <div>
+                <h4 class="title">
+                    <a href="/post/{{id}}">{{title}}</a>
+                </h4>
+                <span>{{contents}}</span>
             </div>
             <div class="info">
                 <span>{{format_date created_at}}</span>
