@@ -24,6 +24,7 @@ Comment.init(
             }
         },
         post_id: {
+            onDelete: 'cascade',
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
